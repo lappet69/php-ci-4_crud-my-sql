@@ -26,7 +26,7 @@ class ApiController extends BaseController
     if ($response['error'] == 0) {
       $this->_saveToDatabase($response['data']);
     } else {
-      echo $response['ket'];
+      echo $response['ket'] . ' file env';
     }
   }
 

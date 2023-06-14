@@ -2,17 +2,20 @@
 
 namespace App\Controllers;
 
-use \App\Models;
-
 class Product extends BaseController
 {
     protected $tb_products;
     protected $validation;
+    protected $callApi;
 
     public function __construct()
     {
         $tb_products = new \App\Models\Product();
+        $callApi = new \App\Controllers\ApiController();
         $validation = \Config\Services::validation();
+
+        // ambil data api
+        $callApi->getAPI();
         $this->tb_products = $tb_products;
         $this->validation = $validation;
     }
